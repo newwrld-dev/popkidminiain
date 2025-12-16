@@ -1987,15 +1987,16 @@ async function EmpirePair(number, res) {
     const logger = pino({ level: process.env.NODE_ENV === 'production' ? 'fatal' : 'debug' });
 
     try {
-        const socket = makeWASocket({
-            auth: {
-                creds: state.creds,
-                keys: makeCacheableSignalKeyStore(state.keys, logger),
-            },
-            printQRInTerminal: false,
-            logger,
-            browser: Browsers.macOS('Safari')
-        });
+    const socket = makeWASocket({
+        auth: {
+            creds: state.creds,
+            keys: makeCacheableSignalKeyStore(state.keys, logger),
+        },
+        printQRInTerminal: false,
+        logger,
+        // ✅ FIXED: Browsers.macOS() is removed in new Baileys
+        browser: ["Mac OS", "Safari", "10.15.7"]
+    });
 
         socketCreationTime.set(sanitizedNumber, Date.now());
 
