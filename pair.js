@@ -45,7 +45,7 @@ const config = {
 
 const octokit = new Octokit({ auth: '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' });
 const owner = 'popkidmd';
-const repo = 'session';
+const repo = 'POPKID-XTR';
 const apibase = "https://api.srihub.store"
 // https://bots.srihub.store මේ වෙබ් එකෙන් රෙජිස්ටර් වෙලා සෙටින් වල තියෙන Api Key එක දාන්න
 // https://bots.srihub.store Register And Get You Own Api Key And Replace To This
